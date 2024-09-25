@@ -22,6 +22,13 @@
       "when": 1727284803484,
       "tag": "0002_faulty_goliath",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1727290007927,
+      "tag": "0003_orange_nextwave",
+      "breakpoints": true
     }
   ]
 }

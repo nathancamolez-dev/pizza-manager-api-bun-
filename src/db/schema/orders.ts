@@ -8,8 +8,9 @@ import { orderItems } from './order-items'
 export const orderStatusEnum = pgEnum('order_status_enum', [
   'pending',
   'preparing',
-  'ready',
   'delivered',
+  'delivering',
+  'cancelled',
 ])
 
 export const order = pgTable('orders', {

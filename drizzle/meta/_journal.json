@@ -50,6 +50,20 @@
       "when": 1727720653537,
       "tag": "0006_fair_tattoo",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1727722485676,
+      "tag": "0007_boring_black_tom",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1727722610915,
+      "tag": "0008_late_thunderbolt",
+      "breakpoints": true
     }
   ]
 }

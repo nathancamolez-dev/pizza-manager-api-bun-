@@ -120,7 +120,12 @@ for (let i = 0; i < 200; i++) {
     customerId: faker.helpers.arrayElement([customer1.id, customer2.id]),
     restaurantId: restaurant1.id,
     totalInCents,
-    status: faker.helpers.arrayElement(['pending', 'delivered']),
+    status: faker.helpers.arrayElement([
+      'pending',
+      'delivered',
+      'preparing',
+      'delivering',
+    ]),
     created_at: faker.date.recent({ days: 40 }),
   })
 }

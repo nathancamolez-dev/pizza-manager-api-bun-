@@ -1,0 +1,1 @@
+ALTER TYPE "order_status_enum" ADD VALUE 'delivering';

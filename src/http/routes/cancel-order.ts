@@ -15,8 +15,11 @@ export const cancelOrder = new Elysia().use(auth).patch(
       throw new UnauthorizedError()
     }
     const orderToUpdate = await db.query.order.findFirst({
-      where(fields, { eq }) {
-        return eq(fields.id, orderId)
+      where(fields, { eq, and }) {
+        return and(
+          eq(fields.id, orderId),
+          eq(fields.restaurantId, restaurantId),
+        )
       },
     })
 

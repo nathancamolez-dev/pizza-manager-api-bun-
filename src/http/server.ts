@@ -13,7 +13,10 @@ import { deliverOrder } from './routes/deliver-order'
 import { cancelOrder } from './routes/cancel-order'
 import { getOrders } from './routes/get-orders'
 import { getMonthReceipt } from './routes/get-month-receipt'
+import { getMonthOrderAmount } from './routes/get-month-orders-amount'
 import { getDaysOrderAmount } from './routes/get-day-orders-amount'
+import { getMonthCancelledOrderAmount } from './routes/get-cancelled-month-orders-amount'
+
 const app = new Elysia()
   .use(registerRestaurant)
   .use(sendAuthLink)
@@ -29,6 +32,8 @@ const app = new Elysia()
   .use(getOrders)
   .use(getMonthReceipt)
   .use(getDaysOrderAmount)
+  .use(getMonthOrderAmount)
+  .use(getMonthCancelledOrderAmount)
   .onError(({ set, error, code }) => {
     switch (code) {
       case 'VALIDATION': {

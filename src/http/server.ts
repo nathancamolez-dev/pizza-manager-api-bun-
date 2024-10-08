@@ -18,8 +18,23 @@ import { getDaysOrderAmount } from './routes/get-day-orders-amount'
 import { getMonthCancelledOrderAmount } from './routes/get-cancelled-month-orders-amount'
 import { getPopularProducts } from './routes/get-popular-products'
 import { getDailyReceiptInPeriod } from './routes/get-daily-receipt-in-period'
+import cors from '@elysiajs/cors'
 
 const app = new Elysia()
+  .use(
+    cors({
+      credentials: true,
+      allowedHeaders: ['content-type'],
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH', 'HEAD'],
+      origin: (request): boolean => {
+        const origin = request.headers.get('origin')
+        if (!origin) {
+          return false
+        }
+        return true
+      },
+    }),
+  )
   .use(registerRestaurant)
   .use(sendAuthLink)
   .use(authenticateFromLink)

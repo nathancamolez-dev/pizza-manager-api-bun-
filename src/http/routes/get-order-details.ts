@@ -57,9 +57,7 @@ export const getOrderDetails = new Elysia().use(auth).get(
       }
     }
 
-    return {
-      order: UserOrder,
-    }
+    return UserOrder
   },
   {
     params: t.Object({
